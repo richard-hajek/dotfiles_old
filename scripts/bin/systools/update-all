@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+
+
+if screen -ls | grep update; then
+	echo Update screen is active, refusing to proceed.
+	exit 1
+fi
+
+sudo /mnt/mount-em
+
+# screen -dmaS update
+
+OUT=$(
+sleep 1
+screen -S update -X split
+screen -S update -X focus next
+screen -S update -X screen
+
+screen -S update -X split -v
+screen -S update -X focus next
+screen -S update -X screen
+
+screen -S update -X focus next
+screen -S update -X split -v
+screen -S update -X focus next
+screen -S update -X screen
+
+screen -S update -p 0 -X stuff "yay -Syu^M"
+
+screen -S update -p 1 -X stuff "sudo arch-chroot /mnt/gaming^M"
+screen -S update -p 1 -X stuff "su meowxiik^M"
+screen -S update -p 1 -X stuff "yay -Syu^M"
+
+screen -S update -p 2 -X stuff "sudo arch-chroot /mnt/prod^M"
+screen -S update -p 2 -X stuff "su meowxiik^M"
+screen -S update -p 2 -X stuff "yay -Syu^M"
+
+screen -S update -p 3 -X stuff "ssh nuc^M"
+screen -S update -p 3 -X stuff "yay -Syu"
+) & 
+
+screen -S update

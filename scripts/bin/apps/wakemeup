@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+shopt -s nocaseglob
+cd ~/Projects/wake*me*up
+./wake*.py

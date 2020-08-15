@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+
+TERM="$@"
+API_KEY="AIzaSyCe54n46oXBnoB9GNazmhkln4LAHNbnQSE"
+SEARCH_ENGINE="004489717344693488475:p06by5bchbc"
+
+TERM=`echo $TERM | sed 's/ /\%20/g'`
+echo $TERM
+URL=`curl "https://www.googleapis.com/customsearch/v1?key=${API_KEY}&q=${TERM}&cx=${SEARCH_ENGINE}" | jq '.items[0].link' | sed 's/\"//g'`
+
+firefox $URL

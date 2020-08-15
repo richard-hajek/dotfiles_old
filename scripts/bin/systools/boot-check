@@ -1,0 +1,57 @@
+#!/usr/bin/bash
+
+DEV="$1"
+
+if [[ -z "$DEV" ]] || [[ "$DEV" == "--help" ]] || [[ "$DEV" == "-h" ]] ; then
+	echo "Usage: boot-check <device>"
+	echo "E.g. boot-check /dev/sdb"
+fi
+
+parted=`parted $DEV p`
+fdisk=`fdisk $DEV --list`
+
+GPT=`echo "$fdisk" | grep "Disklabel type: gpt" -q`
+GPT=$?
+
+DOS=`echo "$fdisk" | grep "Disklabel type: dos" -q`
+DOS=$?
+
+if [[ "$GPT" == 0 ]]; then
+	echo "GUID Partition Table (gpt) Detected"
+	EFIs=`echo "$fdisk" | grep "EFI System" | awk '{print $1}'`
+	
+	if [[ -z "$EFIs" ]]; then
+		echo "Found no EFI bootable partitions on $DEV"
+		exit 1
+	fi
+	
+	echo "Found bootable partitions: `echo $EFIs | tr '\n' ' '`"
+	
+	echo "Checking for valid UEFI bootable images..."
+	mkdir -p /tmp/boot-check/mount
+
+	for part in $EFIs; do
+		echo ""
+		echo "Checking in $part"
+		mount $part /tmp/boot-check/mount
+		
+		if [ -d "/tmp/boot-check/mount/efi/boot" ]; then
+			echo "Found valid directory structure"
+
+			if [ -f  "/tmp/boot-check/mount/efi/boot/bootx64.efi" ]; then
+				echo "Found valid boot file!"
+			else
+				echo "Did not find valid boot file"
+			fi
+		else
+			echo "Did not find valid directory structure"
+		fi
+		umount $part
+	done
+fi
+
+
+if [[ "$DOS" == 0 ]]; then
+	echo "DOS Partition table (Master boot record) Detected"
+	echo "This script cannot check for sanity of MBR"
+fi

@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+HOME="$HOME/.local/share/steam_home"
+/usr/bin/steam

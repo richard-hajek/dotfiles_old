@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+chosen=`cat ~/.local/share/mwx/emoji | rofi -dmenu | sed "s/ .*//"`
+[ -z "$chosen" ] && exit
+echo "$chosen" | tr -d '\n' | xclip -selection clipboard
+xdotool type "$chosen"

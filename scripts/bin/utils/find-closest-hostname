@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+prefix=`pwd`
+
+while true; do
+	
+	#echo Testing prefix: $prefix
+	
+	if [[ -f "$prefix/etc/hostname" ]]; then
+		break;
+	fi
+	
+	prefix=`cd "$prefix";cd ..;pwd`
+done
+
+if [[ "$prefix" == "/" ]]; then
+	cat "$prefix/etc/hostname"
+else
+	echo -n '-/'
+	cat "$prefix/etc/hostname"
+fi
+
+#echo Found Hostname `cat "$prefix/etc/hostname"`

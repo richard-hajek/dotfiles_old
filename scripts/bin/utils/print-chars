@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+printChar(){
+for CODE in $@; do
+	/usr/bin/printf "%s - \u$CODE\n" $CODE
+done
+}
+
+CODEa=(e)
+CODEb=({0..2})
+CODEc=({0..9} {a..f})
+CODEd=({0..9} {a..f})
+
+for a in ${CODEa[@]}; do
+for b in ${CODEb[@]}; do
+for c in ${CODEc[@]}; do
+for d in ${CODEd[@]}; do
+	CODE=$a$b$c$d
+	printChar $CODE
+done
+done
+done
+done
+
+exit $?

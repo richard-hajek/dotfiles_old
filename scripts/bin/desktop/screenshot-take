@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+PREF=$(date +%F-%H:%M:%S)
+
+scrot ~/Pictures/Screenshots/$PREF.png
+rm ~/Pictures/latest-screenshot.png
+ln -s ~/Pictures/Screenshots/$PREF.png ~/Pictures/latest-screenshot.png
+
+echo $PREF

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+WALLPAPER_THEME=''
+PYWALL_THEME='sexy-gjm'
+
+if [ "$#" -gt "0" ]
+then
+	WALLPAPER_THEME=$1
+fi
+
+if [ "$#" -gt "1" ]
+then
+	PYWALL_THEME=$2
+fi
+
+if [ "$PYWALL_THEME" == "background" ]
+then
+	wal --iterative -i ~/Pictures/Wallpapers/$WALLPAPER_THEME
+else
+	~/Pictures/Wallpapers/select $WALLPAPER_THEME
+	wal --theme $PYWALL_THEME
+fi
+

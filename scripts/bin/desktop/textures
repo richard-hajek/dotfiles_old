@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+
+cd "${0%/*}"
+shopt -s nocaseglob
+
+cd ~/Cloud/Models/x_TEXTURES
+textureheaven=`echo textureheaven/*/*diff*` # Fails to match 5 textures... meh
+cc0=`echo cc0/*/*color*`
+
+textures="${textureheaven} ${cc0}"
+
+if [[ $# == 1 ]]; then
+	textures=`echo $textures | tr ' ' '\n' | grep -i $1 | tr '\n' ' ' `
+fi
+
+
+geeqie -l $textures

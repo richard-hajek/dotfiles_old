@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+PREF=`screenshot-take`
+${SCREENSHOTEDITOR} ~/Pictures/Screenshots/$PREF.png & 

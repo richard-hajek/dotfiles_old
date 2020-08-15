@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+HACKFEST=~/Cloud/Projects/hackfest2
+MODELS=~/Cloud/Models/hackfest
+FILES=`find $MODELS | grep '.gltf$'`
+
+for f in $FILES; do
+	cp "${f}" "${HACKFEST}/assets/import"
+done
