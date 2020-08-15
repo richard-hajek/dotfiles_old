@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+name=`cat /etc/hostname | sed 's/laptop-//g' | tr '[a-z]' '[A-Z]'`
+
+echo "  $name"
+
+exit
+
+if [[ $name == "laptop-prod" ]]; then echo laptop-prod; fi
+if [[ $name == "laptop-gaming" ]]; then echo Gaming; fi
+if [[ $name == "laptop-core" ]]; then echo Core; fi

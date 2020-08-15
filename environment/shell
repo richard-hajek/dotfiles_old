@@ -1,0 +1,20 @@
+#      _          _ _          
+#     | |        | | |         
+#  ___| |__   ___| | |_ __ ___ 
+# / __| '_ \ / _ \ | | '__/ __|
+# \__ \ | | |  __/ | | | | (__ 
+# |___/_| |_|\___|_|_|_|  \___|
+#                              
+
+function cd {
+    builtin cd "$@" && ls --color=auto --group-directories-first
+}
+
+alias grep="grep --color=auto"
+alias ls='ls --color=auto --group-directories-first'
+alias l="ls -l"
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -la"
+alias llh="ls -lh"
+alias llah="ls -lah"

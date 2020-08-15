@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+cd ~/.config/polybar
+dpi=`./dpi`
+
+if [[ "$dpi" == "96x96" ]]; then
+	xrandr --dpi 144
+	echo Changing to 144
+else
+	xrandr --dpi 96
+	echo Changing to 96
+fi

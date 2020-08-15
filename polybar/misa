@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+total=$(( 250 - `date '+%j' --date '2020-6-19'` ))
+now=$(( 250 - `date '+%j' ` ))
+
+echo "  $now / $total ( $(( 100 - ($now * 100 / $total)  ))% ) "

@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+current=`xdpyinfo | grep resolution | sed 's/.*x\([0-9]*\).*/\1/'`
+echo "  ${current}"
