@@ -30,5 +30,5 @@ typeset -gA ZSH_HIGHLIGHT_STYLES
 source $ZSH/oh-my-zsh.sh
 
 setopt extendedglob
-. ~/.config/environment/shell
+. ~/.config/shells/shell
 setopt COMPLETE_ALIASES

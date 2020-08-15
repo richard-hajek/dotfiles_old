@@ -1,4 +1,4 @@
-. ~/.config/environment/shell
+. ~/.config/shells/shell
 
 # PS1
 green=$(tput setaf 2)

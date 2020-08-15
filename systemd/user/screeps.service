@@ -1,0 +1,9 @@
+[Unit]
+Description=Screeps server
+
+[Service]
+ExecStart=/usr/bin/npx screeps start --port 30050
+WorkingDirectory=/home/meowxiik/Projects/ScreepsServer
+
+[Install]
+WantedBy=default.target

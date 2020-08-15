@@ -37,6 +37,6 @@ export GOLAND_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/goland.properties"
 export RIDER_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/rider.properties"
 
 # CUSTOM VARS
-export BASHRC="$XDG_CONFIG_HOME/environment/bashrc"
+export BASHRC="$XDG_CONFIG_HOME/shells/bashrc"
 
 source `which user-path-gen` # Add ~/.local/bin/**/ to path

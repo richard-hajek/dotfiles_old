@@ -1,0 +1,10 @@
+[Unit]
+Description=Picom composite manager
+
+[Service]
+ExecStart=/usr/bin/picom
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target
