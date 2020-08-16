@@ -4,13 +4,11 @@ shopt -s globstar
 shopt -s nullglob
 
 bin="$HOME/.local/bin"
-cd "$bin"
-
 PATH="${bin}:${PATH}"
-for folder in **/; do
-	real=`realpath $folder`
+
+for folder in "$bins"*/**/; do
+	echo $folder
 	PATH="${real}:${PATH}"
 done
 
-cd 
 export PATH
