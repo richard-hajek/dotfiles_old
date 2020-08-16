@@ -6,9 +6,8 @@ shopt -s nullglob
 bin="$HOME/.local/bin"
 PATH="${bin}:${PATH}"
 
-for folder in "$bins"*/**/; do
-	echo $folder
-	PATH="${real}:${PATH}"
+for folder in "$bin"**/*/; do
+	PATH="${folder}:${PATH}"
 done
 
 export PATH
