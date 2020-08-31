@@ -1,3 +1,2 @@
-[ -z "$TERMINAL" ] && . ~/.profile
 [ -f "${BASHRC}" ] && . "${BASHRC}"
-[ -f "~/.bashrc_" ] && . "~/.bashrc_" 
+[ -f "${HOME}/.bashrc_" ] && . "${HOME}/.bashrc_"
