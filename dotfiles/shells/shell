@@ -4,7 +4,8 @@
 # / __| '_ \ / _ \ | | '__/ __|
 # \__ \ | | |  __/ | | | | (__ 
 # |___/_| |_|\___|_|_|_|  \___|
-#                              
+
+echo Executing $(readlink -f "$0")
 
 function cd {
     builtin cd "$@" && ls --color=auto --group-directories-first
