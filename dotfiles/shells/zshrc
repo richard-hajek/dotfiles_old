@@ -1,4 +1,4 @@
-echo Executing $(readlink -f "$0")
+echo \[zshrc\] Executing $(readlink -f "$0")
 
 export ZSH=/usr/share/oh-my-zsh/
 
