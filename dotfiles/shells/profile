@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PROFILE_SOURCED=1
+
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
