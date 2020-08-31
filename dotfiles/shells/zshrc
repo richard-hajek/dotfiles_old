@@ -34,3 +34,5 @@ source $ZSH/oh-my-zsh.sh
 setopt extendedglob
 . ~/.config/shells/shell
 setopt COMPLETE_ALIASES
+
+[ -f "~/.zshrc_" ] && . ~/.zshrc_
