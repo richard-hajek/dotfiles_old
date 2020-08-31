@@ -1,4 +1,4 @@
-echo Executing $(readlink -f "$0")
+echo "Sourcing ~/.config/shells/bashrc"
 
 . ~/.config/shells/shell
 

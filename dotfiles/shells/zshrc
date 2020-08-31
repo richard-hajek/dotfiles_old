@@ -1,4 +1,4 @@
-echo \[zshrc\] Executing $(readlink -f "$0")
+echo "Sourcing ~/.config/shells/zshrc"
 
 export ZSH=/usr/share/oh-my-zsh/
 

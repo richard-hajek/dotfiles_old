@@ -1,4 +1,4 @@
-echo Executing $(readlink -f "$0")
+echo "Sourcing ~/.bashrc"
 
 [ -z "${PROFILE_SOURCED}" ] && . "${HOME}/.profile"
 [ -f "${BASHRC}" ] && . "${BASHRC}"

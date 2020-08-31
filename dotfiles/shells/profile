@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo Executing $(readlink -f "$0")
+echo "Sourcing ~/.config/shells/profile"
 
 export PROFILE_SOURCED=1
 

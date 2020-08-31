@@ -5,7 +5,7 @@
 # \__ \ | | |  __/ | | | | (__ 
 # |___/_| |_|\___|_|_|_|  \___|
 
-echo Executing $(readlink -f "$0")
+echo "Sourcing ~/.config/shells/shell"
 
 function cd {
     builtin cd "$@" && ls --color=auto --group-directories-first
