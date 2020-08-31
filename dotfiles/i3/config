@@ -138,7 +138,8 @@ exec ~/.config/polybar/launch_polybar.sh
 
 # for_window [class="^.*"] border pixel 0
 
-
+assign [class="Steam"] 4
+assign [class="discord"] 3
 assign [class="firefox"] 2
 assign [class="jetbrains"] 3
 #assign [class="kitty"] 1

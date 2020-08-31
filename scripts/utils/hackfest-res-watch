@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+SOURCE_DIR="${HOME}/Cloud/Models/hackfest"
+TARGET_DIR="${HOME}/Cloud/Projects/hackfest2"
+
+while true; do
+	inotifywait -e modify,create,delete,move -r "${SOURCE_DIR}"
+	sleep 0.5
+	hackfest-res-sync
+done

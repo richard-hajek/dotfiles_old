@@ -36,6 +36,9 @@ export PHPSTORM_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/phpstorm.properties"
 export GOLAND_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/goland.properties"
 export RIDER_PROPERTIES="$XDG_CONFIG_HOME/JetBrains/rider.properties"
 
+export CONDA_ROOT="$XDG_CONFIG_HOME/conda"
+export CONDA_PREFIX="$XDG_CONFIG_HOME/conda/envs/default"
+
 # CUSTOM VARS
 export BASHRC="$XDG_CONFIG_HOME/shells/bashrc"
 

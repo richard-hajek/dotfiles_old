@@ -64,7 +64,7 @@ bottom = true
 
 modules-left = powermenu i3
 ;modules-center = date 
-modules-right = mic dpi misa pulseaudio host wlan eth temperature memory cpu battery  date
+modules-right = mic dpi pulseaudio host wlan eth temperature memory cpu battery  date
 
 tray-position = right
 
@@ -81,10 +81,6 @@ interval = 1
 [module/weeks]
 type = custom/script
 exec = /home/meowxiik/.config/polybar/weeks
-
-[module/misa]
-type = custom/script
-exec = /home/meowxiik/.config/polybar/misa
 
 [module/online]
 type = custom/script
