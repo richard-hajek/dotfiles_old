@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-shopt -s globstar
-shopt -s nullglob
-
 bin="$HOME/.local/bin"
 PATH="${bin}:${PATH}"
 
-for folder in "$bin"**/*/; do
-	PATH="${folder}:${PATH}"
+for folder in `find "$bin"`; do
+	[ -d "$folder" ] && PATH="${folder}:${PATH}"
 done
 
 export PATH
