@@ -24,4 +24,4 @@ export LS_COLORS
 
 [ -z "$TERMINAL" ] && source ~/.profile
 
-[ -d "${HOME}/.local/share/yaabs" ] && "${HOME}/.local/share/yaabs/yaabs/yaabs.py" users sync "${HOME}/.local/share/yaabs/config/base.json"
+[ -d "${HOME}/.local/share/yaabs" ] && "${HOME}/.local/share/yaabs/yaabs/yaabs.py" users sync "${HOME}/.local/share/yaabs/configs/base.json"
