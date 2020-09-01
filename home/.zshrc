@@ -1,4 +1,6 @@
-echo "Sourcing ~/.config/shells/zshrc"
+echo "Sourcing ~/.zshrc"
+
+. ~/.config/shells/shell
 
 export ZSH=/usr/share/oh-my-zsh/
 
@@ -32,7 +34,4 @@ typeset -gA ZSH_HIGHLIGHT_STYLES
 source $ZSH/oh-my-zsh.sh
 
 setopt extendedglob
-. ~/.config/shells/shell
 setopt COMPLETE_ALIASES
-
-[ -f "~/.zshrc_" ] && . ~/.zshrc_
