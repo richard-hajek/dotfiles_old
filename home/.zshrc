@@ -1,6 +1,6 @@
 echo "Sourcing ~/.zshrc"
 
-. ~/.config/shells/shell
+. ~/.config/shellrc
 
 export ZSH=/usr/share/oh-my-zsh/
 
