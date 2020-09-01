@@ -25,6 +25,7 @@ LS_COLORS='rs=0:di=01;34:ln=target:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 export LS_COLORS
 
 [ -z "$PROFILE_SOURCED" ] && source ~/.profile
+[ -f "~/.`basename ${SHELL}`rc_" ] && source "~/.`basename ${SHELL}`rc_"
 
 alias cdy="cd ~/.config/yaabs/dotfiles"
 alias yun="${HOME}/.local/share/yaabs/yaabs/yaabs.py users sync ${HOME}/.local/share/yaabs/configs/base.json; $SHELL; exit"
