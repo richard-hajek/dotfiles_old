@@ -1,6 +1,6 @@
 echo "Sourcing ~/.bashrc"
 
-. ~/.config/shells/shell
+. ~/.config/shellrc
 
 # PS1
 green=$(tput setaf 2)

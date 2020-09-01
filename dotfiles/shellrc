@@ -26,6 +26,8 @@ export LS_COLORS
 
 [ -z "$PROFILE_SOURCED" ] && source ~/.profile
 
-alias yun="${HOME}/.local/share/yaabs/yaabs/yaabs.py users sync ${HOME}/.local/share/yaabs/configs/base.json"
+alias cdy="cd ~/.config/yaabs/dotfiles"
+alias yun="${HOME}/.local/share/yaabs/yaabs/yaabs.py users sync ${HOME}/.local/share/yaabs/configs/base.json; $SHELL; exit"
+
 
 # [ -d "${HOME}/.local/share/yaabs" ] && "${HOME}/.local/share/yaabs/yaabs/yaabs.py" users sync "${HOME}/.local/share/yaabs/configs/base.json"

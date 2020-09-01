@@ -24,7 +24,10 @@ plugins=(
 	dirhistory 
 	autojump 
 	sudo
-	rails git git-prompt ruby
+	rails
+	git
+	# git-prompt
+	# ruby
 	#zsh-syntax-highlighting
 	)
 
