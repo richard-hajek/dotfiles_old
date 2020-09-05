@@ -38,3 +38,6 @@ source $ZSH/oh-my-zsh.sh
 
 setopt extendedglob
 setopt COMPLETE_ALIASES
+
+. ~/.config/shellrc
+itr='cd `iter`'

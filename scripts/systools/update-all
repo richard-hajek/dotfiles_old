@@ -10,6 +10,13 @@ sudo /mnt/mount-em
 
 # screen -dmaS update
 
+local UPDATE_CMD
+if [[ "$1" == "fast" ]]; then
+	UPDATE_CMD="sudo pacman -Syu --noconfirm; yay -Syu --answerclean n --answerdiff n --answeredit n --answerupgrade a --noremovemake"
+else
+	UPDATE_CMD="sudo pacman -Syu; yay -Syu"
+fi
+
 OUT=$(
 sleep 1
 screen -S update -X split
@@ -25,18 +32,18 @@ screen -S update -X split -v
 screen -S update -X focus next
 screen -S update -X screen
 
-screen -S update -p 0 -X stuff "yay -Syu^M"
+screen -S update -p 0 -X stuff "${UPDATE_CMD}^M"
 
 screen -S update -p 1 -X stuff "sudo arch-chroot /mnt/gaming^M"
 screen -S update -p 1 -X stuff "su meowxiik^M"
-screen -S update -p 1 -X stuff "yay -Syu^M"
+screen -S update -p 1 -X stuff "${UPDATE_CMD}^M"
 
 screen -S update -p 2 -X stuff "sudo arch-chroot /mnt/prod^M"
 screen -S update -p 2 -X stuff "su meowxiik^M"
-screen -S update -p 2 -X stuff "yay -Syu^M"
+screen -S update -p 2 -X stuff "${UPDATE_CMD}^M"
 
 screen -S update -p 3 -X stuff "ssh nuc^M"
-screen -S update -p 3 -X stuff "yay -Syu"
+screen -S update -p 3 -X stuff "${UPDATE_CMD}"
 ) & 
 
 screen -S update

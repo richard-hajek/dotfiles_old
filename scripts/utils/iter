@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+DIR=$( basename $(pwd) )
+
+DIRBASE=${DIR%-[0-9]}
+POSTFIX=0
+
+cd ..
+
+while [[ -d "${DIRBASE}-${POSTFIX}" ]]; do
+	(( POSTFIX++ ))
+done
+
+NEWDIR="${DIRBASE}-${POSTFIX}"
+
+echo Switching from $DIR to $NEWDIR >&2
+
+cp -r "$DIR" "$NEWDIR"
+
+echo "../${NEWDIR}"
