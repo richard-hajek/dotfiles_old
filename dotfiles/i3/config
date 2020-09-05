@@ -142,6 +142,7 @@ assign [class="Steam"] 4
 assign [class="discord"] 3
 assign [class="firefox"] 2
 assign [class="jetbrains"] 3
+assign [class="zenity"] 4
 #assign [class="kitty"] 1
 #
 #for_window [workspace=$ws2] layout tabbed
